@@ -1,0 +1,10 @@
+C:\Users\Brian Bosak\Documents\Visual Studio 2010\Projects\3DAPI\dapirenderer\3DAPI\bin\Debug\3DAPI.dll
+C:\Users\Brian Bosak\Documents\Visual Studio 2010\Projects\3DAPI\dapirenderer\3DAPI\bin\Debug\3DAPI.pdb
+C:\Users\Brian Bosak\Documents\Visual Studio 2010\Projects\3DAPI\dapirenderer\3DAPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Documents\Visual Studio 2010\Projects\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.dll
+C:\Users\Brian Bosak\Documents\Visual Studio 2010\Projects\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\bin\Debug\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\bin\Debug\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.pdb

@@ -1,0 +1,5 @@
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\bin\Release\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\bin\Release\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Release\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Release\3DAPI.pdb

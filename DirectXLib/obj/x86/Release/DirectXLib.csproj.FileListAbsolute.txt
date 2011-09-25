@@ -1,0 +1,8 @@
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Release\basicDXShader.txt
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Release\DirectXLib.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Release\DirectXLib.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Release\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Release\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\x86\Release\DirectXLib.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\x86\Release\DirectXLib.pdb

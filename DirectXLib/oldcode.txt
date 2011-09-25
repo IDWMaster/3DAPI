@@ -1,0 +1,297 @@
+﻿using System;
+using System.Threading;
+using System.Collections.Generic;
+using System.Text;
+using _3DAPI;
+using SlimDX;
+using System.Security;
+using SlimDX.Windows;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using SlimDX.Direct3D9;
+using System.IO;
+namespace DirectXLib
+{
+    class DirectBasicShader:Shader
+    {
+
+        protected override void ApplyShader()
+        {
+            StreamReader mreader = new StreamReader("basicDXShader.txt");
+            string unicode = mreader.ReadToEnd();
+            byte[] ascii = Encoding.ASCII.GetBytes(unicode);
+            MemoryStream mstream = new MemoryStream(ascii);
+            Effect mfect = Effect.FromStream(renderer.device, mstream, ShaderFlags.None);
+            
+            renderer.effect = mfect;
+            
+            mreader.Close();
+        }
+        DirectEngine renderer;
+        public DirectBasicShader(DirectEngine render)
+        {
+            renderer = render;
+        }
+    }
+    class DirectTexture : _3DAPI.Texture2D
+    {
+        DirectEngine engine;
+        int _width;
+        int _height;
+        public DirectTexture(int Width, int Height, DirectEngine red):base(Width,Height)
+        {
+            engine = red;
+            _width = Width;
+            _height = Height;
+        }
+        protected override void LoadTex()
+        {
+          //  Texture mtex = new Texture(engine.device, _width, _height, 0, Usage.None, Format.X8B8G8R8, Pool.Managed);
+            engine.device.SetSamplerState(0, SamplerState.MinFilter, TextureFilter.Linear);
+            engine.device.SetSamplerState(0, SamplerState.MagFilter, TextureFilter.Linear);
+            engine.device.SetSamplerState(0, SamplerState.MipFilter, TextureFilter.Linear);
+            mtex = Texture.FromFile(engine.device, "pic.jpg");
+            engine.device.SetRenderState(RenderState.Wrap0, TextureWrapping.WrapCoordinate0);
+          
+           
+        }
+        Texture mtex;
+        protected override void DrawTex()
+        {
+          //  throw new NotImplementedException();
+
+            engine.effect.Technique = engine.effect.GetTechnique("technique0");
+            EffectHandle handle = engine.effect.GetParameter(null, "shaderTexture");
+          
+            engine.effect.SetTexture(handle, mtex);
+            
+            engine.effect.Begin();
+            engine.effect.BeginPass(0);
+            
+            engine.effect.EndPass();
+            engine.effect.End();
+        }
+    }
+    [StructLayout(LayoutKind.Sequential)]
+    struct Vertex
+    {
+        public Vector3 Position;
+        public Vector2 Texcoord;
+        public Vector3 Normal;
+        public Vertex(Vector3 position, Vector2 texcoord, Vector3 normal)
+        {
+            Position = position;
+            Texcoord = texcoord;
+            Normal = normal;
+        }
+        public static int GetSizeOf()
+        {
+        return ((sizeof(float) * 3) + (sizeof(float) * 2) + (sizeof(float) * 3));
+        }
+    }
+    class DirectVertexBuffer : _3DAPI.VertexBuffer
+    {
+        VertexDeclaration mdec;
+        bool firstpass = true;
+        SlimDX.Direct3D9.VertexBuffer vertbuffer;
+        float rotation = 0;
+        protected override void RenderBuffer()
+        {
+            rotation+=.1f;
+            if (firstpass)
+            {
+                firstpass = false;
+                VertexElement position = new VertexElement(0, 0, DeclarationType.Float3, DeclarationMethod.Default, DeclarationUsage.Position, 0);
+                VertexElement texcoord = new VertexElement(0, sizeof(float) * 3, DeclarationType.Float2, DeclarationMethod.Default, DeclarationUsage.TextureCoordinate, 0);
+                VertexElement normal = new VertexElement(0, (sizeof(float) * 3) + (sizeof(float) * 2), DeclarationType.Float3, DeclarationMethod.Default, DeclarationUsage.Normal, 0);
+                
+                mdec = new VertexDeclaration(_renderer.device, new VertexElement[] { position, texcoord, normal,VertexElement.VertexDeclarationEnd });
+               
+                vertbuffer = new SlimDX.Direct3D9.VertexBuffer(_renderer.device, vertices.Length * Vertex.GetSizeOf(), Usage.None, VertexFormat.None, Pool.Managed);
+                DataStream GPUStream = vertbuffer.Lock(0, 0, LockFlags.None);
+                List<Vertex> vbos = new List<Vertex>();
+                for (int i = 0; i < vertices.Length; i++)
+                {
+                vbos.Add(new Vertex(new Vector3(vertices[i].X,vertices[i].Y,vertices[i].Z),new Vector2(texcoords[i].X,texcoords[i].Y),new Vector3(normals[i].X,normals[i].Y,normals[i].Z)));
+                }
+                GPUStream.WriteRange(vbos.ToArray());
+                vertbuffer.Unlock();
+            }
+            
+            _renderer.device.VertexDeclaration = mdec;
+            
+            _renderer.device.SetStreamSource(0, vertbuffer, 0,Vertex.GetSizeOf());
+            _renderer.device.EnableLight(0, true);
+            EffectHandle projmatrix = _renderer.effect.GetParameter(null,"WorldViewProj");
+            Quaternion mternian = Quaternion.RotationAxis(Vector3.UnitY, MathHelpers.DegreesToRadians(rotation));
+            Matrix ortho = Matrix.PerspectiveFovLH(MathHelpers.DegreesToRadians(180),(float)_renderer.device.Viewport.Width/(float)_renderer.device.Viewport.Height,1,5000);
+            _renderer.effect.SetValue<Matrix>(projmatrix, Matrix.Identity*Matrix.Translation(-.5f,0,0)*Matrix.RotationQuaternion(mternian));
+            _renderer.effect.Begin();
+            _renderer.effect.BeginPass(0);
+            
+            _renderer.device.DrawPrimitives(PrimitiveType.TriangleList, 0, vertices.Length/3);
+            _renderer.effect.EndPass();
+            _renderer.effect.End();
+        }
+        DirectEngine _renderer;
+        public DirectVertexBuffer(Vector3D[] verts, Vector2D[] coords, Vector3D[] norms, DirectEngine renderer)
+        {
+            _renderer = renderer;
+            vertices = verts;
+            texcoords = coords;
+            normals = norms;
+            
+        }
+        Vector3D[] normals;
+        Vector2D[] texcoords;
+        Vector3D[] vertices;
+        public override Vector3D[] VertexArray
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+    }
+    public class DirectEngine:Renderer
+    {
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("user32.dll")]
+        static extern bool PeekMessage(out Message msg, IntPtr hWnd, uint messageFilterMin, uint messageFilterMax, uint flags);
+        void gameloop()
+        {
+            
+        }
+
+        void Application_Idle(object sender, EventArgs e)
+        {
+          
+            while (appIsIdle)
+            {
+                RenderFrame();
+            }
+           
+        }
+        
+        bool lostdevice = false;
+        void RenderFrame()
+        {
+            if (!lostdevice)
+            {
+                device.Clear(ClearFlags.Target | ClearFlags.ZBuffer, System.Drawing.Color.Black, 1f, 0);
+
+                device.BeginScene();
+                Draw();
+                device.EndScene();
+                try
+                {
+                    device.Present(Present.None);
+
+                }
+                catch (Exception)
+                {
+                    //Device has been lost
+                    lostdevice = true;
+                }
+            }
+            else
+            {
+                if (device.TestCooperativeLevel().Code != SlimDX.Direct3D9.ResultCode.DeviceLost.Code)
+                {
+                    device.Reset(description);
+                    lostdevice = false;
+                }
+            }
+        }
+        bool appIsIdle
+        {
+            get
+            {
+                Message msg;
+                return !PeekMessage(out msg, IntPtr.Zero, 0, 0, 0);
+            }
+        }
+        public override _3DAPI.VertexBuffer CreateVertexBuffer(Vector3D[] vertices, Vector2D[] texcoords, Vector3D[] normals)
+        {
+            return new DirectVertexBuffer(vertices, texcoords, normals, this);
+        }
+        PresentParameters description;
+		Exception ercode = null;
+        void thetar()
+        {
+         try {  
+            description = new PresentParameters();
+				Direct3D md = new Direct3D();
+            description.BackBufferWidth = md.Adapters[0].CurrentDisplayMode.Width;
+            description.BackBufferHeight = md.Adapters[0].CurrentDisplayMode.Height;
+            description.Windowed = false;
+           
+				
+            
+				Console.WriteLine("Using device (hardware) "+md.Adapters[0].Details.Description);
+                int nvidperfhud = -1;
+                foreach (AdapterInformation et in md.Adapters)
+                {
+                    if (et.Details.Description.ToLower().Contains("perfhud"))
+                    {
+                        nvidperfhud = et.Adapter;
+                    }
+                }
+                if (nvidperfhud == -1)
+                {
+                    device = new SlimDX.Direct3D9.Device(md, 0, DeviceType.Hardware, mform.Handle, CreateFlags.HardwareVertexProcessing, description);
+                }
+                else
+                {
+                    device = new SlimDX.Direct3D9.Device(md, nvidperfhud, DeviceType.Reference, mform.Handle, CreateFlags.HardwareVertexProcessing, description);
+                    Console.WriteLine("Bound to NVidia PerfHud");
+                }
+
+            Application.Idle += new EventHandler(Application_Idle);
+            Viewport mport = device.Viewport;
+            mport.MaxZ = 5000;
+            mport.MinZ = 1;
+            device.Viewport = mport;
+            mvent.Set();
+            Application.Run(mform);
+			}catch(Direct3D9Exception er) {
+				Console.WriteLine(er);
+              
+			ercode = er;
+				Console.WriteLine("WARN: This device does not support DirectX");
+                mvent.Set();
+            }
+			
+			}
+        RenderForm mform = new RenderForm("DirectX");
+        
+        
+        internal SlimDX.Direct3D9.Device device;
+       ManualResetEvent mvent = new ManualResetEvent(false);
+        public DirectEngine()
+        {
+            System.Threading.Thread mthread = new Thread(thetar);
+			mthread.SetApartmentState(ApartmentState.STA);
+            mthread.Start();
+			mvent.WaitOne();
+			if(ercode !=null) {
+			throw ercode;
+			}
+        }
+        public override _3DAPI.Texture2D createTexture(int Width, int Height)
+        {
+
+            return new DirectTexture(Width,Height,this);
+        }
+        internal Effect effect;
+        public override Shader createBasicShader()
+        {
+          //Look ma! No shader!
+            return new DirectBasicShader(this);
+        }
+    }
+}

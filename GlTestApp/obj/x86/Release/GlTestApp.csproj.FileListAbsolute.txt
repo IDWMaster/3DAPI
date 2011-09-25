@@ -1,0 +1,13 @@
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Release\GlTestApp.exe.config
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Release\basicDXShader.txt
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Release\GlTestApp.exe
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Release\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Release\3DLib_OpenGL.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Release\DirectXLib.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Release\OpenTK.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Release\3DLib_OpenGL.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Release\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Release\DirectXLib.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Release\OpenTK.xml
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\obj\x86\Release\GlTestApp.exe

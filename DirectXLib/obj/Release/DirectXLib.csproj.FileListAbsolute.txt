@@ -1,0 +1,11 @@
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\Release\basicDXShader.txt
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\Release\DirectXLib.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\Release\DirectXLib.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\Release\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\Release\SlimDX.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\Release\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\Release\SlimDX.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\Release\SlimDX.xml
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\Release\DirectXLib.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\Release\DirectXLib.pdb

@@ -1,0 +1,6 @@
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPPhoneCore\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPPhoneCore\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPPhoneCore\bin\Windows Phone\Debug\WPPhoneCore.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPPhoneCore\bin\Windows Phone\Debug\WPPhoneCore.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPPhoneCore\obj\Windows Phone\Debug\WPPhoneCore.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPPhoneCore\obj\Windows Phone\Debug\WPPhoneCore.pdb

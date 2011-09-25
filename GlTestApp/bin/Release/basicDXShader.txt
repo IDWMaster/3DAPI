@@ -1,0 +1,51 @@
+﻿
+struct inputval {
+float3 Position:POSITION;
+float3 Normal:NORMAL;
+float2 tex:TEXCOORD0;
+	};
+	struct outputval {
+	float4 Position:POSITION;
+	float2 tex:TEXCOORD0;
+	float3 light:TEXCOORD1;
+	float3 Normal:NORMAL;
+		};
+float4x4 WorldViewProj : WorldViewProjection;
+Texture2D shaderTexture;
+float3 LightDirection:Direction;
+outputval mainVS(inputval input) {
+	float4 pos = mul(float4(input.Position.xyz, 1.0), WorldViewProj);
+	
+	outputval outval;
+	outval.Position = pos;
+	outval.tex = input.tex;
+	outval.Normal = input.Normal;
+
+	outval.light = normalize(LightDirection);
+	
+	return outval;
+}
+
+sampler MeshTextureSampler =
+sampler_state
+{
+	Texture = shaderTexture;
+    MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+   
+};
+
+float4 mainPS(outputval input) : COLOR {
+	return tex2D(MeshTextureSampler,input.tex);//*saturate(dot(input.light,input.Normal));
+	//return shaderTexture.Sample(MeshTextureSampler,input.tex);
+	
+}
+
+technique technique0 {
+	pass p0 {
+		CullMode = None;
+		VertexShader = compile vs_3_0 mainVS();
+		PixelShader = compile ps_3_0 mainPS();
+	}
+}

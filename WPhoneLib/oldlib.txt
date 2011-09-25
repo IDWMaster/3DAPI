@@ -1,0 +1,284 @@
+﻿
+using System;
+using _3DAPI;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
+using Microsoft.Xna.Framework.Media;
+
+namespace WPhoneLib
+{
+    class WPShader : Shader
+    {
+        public WPShader(PhoneRenderer irender)
+        {
+            internrenderer = irender;
+        }
+        PhoneRenderer internrenderer;
+        protected override void ApplyShader()
+        {
+            internrenderer.effect = new BasicEffect(internrenderer.graphicsDevice);
+
+        }
+    }
+    class WPTexture : _3DAPI.Texture2D
+    {
+        public WPTexture(PhoneRenderer irender, int width, int height):base(width,height)
+        {
+            internrenderer = irender;
+        }
+        PhoneRenderer internrenderer;
+        /// <summary>
+        /// Creates a texture from a given file
+        /// </summary>
+        /// <param name="irender"></param>
+        /// <param name="filename"></param>
+        public WPTexture(PhoneRenderer irender, string filename):base(0,0)
+        {
+            this.filename = filename;
+            internrenderer = irender;
+        }
+            string filename = "";
+
+            protected override void LoadTex()
+            {
+                if (filename == "")
+                {
+                    tex = internrenderer.manager.Load<Microsoft.Xna.Framework.Graphics.Texture2D>("pic");
+                }
+                else
+                {
+                    tex = internrenderer.manager.Load<Microsoft.Xna.Framework.Graphics.Texture2D>(filename);
+                }
+            }
+        Microsoft.Xna.Framework.Graphics.Texture2D tex;
+        protected override void DrawTex()
+        {
+            internrenderer.itext = tex;
+        }
+    }
+    class WPVertBuffer:_3DAPI.VertexBuffer
+    {
+        bool depthtest = true;
+        public override bool DepthTesting
+        {
+            get
+            {
+                return depthtest;
+            }
+            set
+            {
+                depthtest = value;
+            }
+        }
+        public override void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+        bool sta = false;
+        public override bool IsStatic
+        {
+            get
+            {
+                return sta;
+            }
+            set
+            {
+                sta = value;
+            }
+        }
+        public WPVertBuffer(PhoneRenderer rder, Vector3D[] verts, Vector3D[] norms, Vector2D[] tex)
+        {
+            renderer = rder;
+            vertices = verts;
+            normals = norms;
+            texcoords = tex;
+        }
+        Vector3D[] vertices;
+        Vector3D[] normals;
+        Vector2D[] texcoords;
+        PhoneRenderer renderer;
+        bool firstrender = true;
+        float cval = 0;
+        protected override void RenderBuffer()
+        {
+            if (firstrender)
+            {
+                mbuff = new Microsoft.Xna.Framework.Graphics.VertexBuffer(renderer.graphicsDevice, typeof(VertexPositionNormalTexture), vertices.Length, BufferUsage.None);
+                List<VertexPositionNormalTexture> mlist = new List<VertexPositionNormalTexture>();
+                for (int i = 0; i < vertices.Length; i++)
+                {
+                    mlist.Add(new VertexPositionNormalTexture(new Vector3(vertices[i].X, vertices[i].Y, vertices[i].Z), new Vector3(normals[i].X, normals[i].Y, normals[i].Z), new Vector2(texcoords[i].X, texcoords[i].Y)));
+
+
+                }
+                mbuff.SetData<VertexPositionNormalTexture>(mlist.ToArray());
+                firstrender = false;
+            }
+            DepthStencilState prevstate = null;
+            if (!depthtest)
+            {
+                prevstate = renderer.graphicsDevice.DepthStencilState;
+                DepthStencilState newstate = new DepthStencilState();
+                newstate.DepthBufferEnable = false;
+                renderer.graphicsDevice.DepthStencilState = newstate;
+            }
+            renderer.graphicsDevice.SetVertexBuffer(mbuff);
+            (renderer.effect as BasicEffect).LightingEnabled = true;
+            (renderer.effect as BasicEffect).TextureEnabled = true;
+            (renderer.effect as BasicEffect).Texture = renderer.itext;
+            (renderer.effect as BasicEffect).World = Matrix.CreateRotationX(rotation.X)*Matrix.CreateRotationY(rotation.Y)*Matrix.CreateRotationZ(rotation.Z);//Matrix.CreateWorld(new Vector3(0,0,0),Vector3.Forward,Vector3.Up);
+            if (!sta)
+            {
+                (renderer.effect as BasicEffect).View = Matrix.CreateLookAt(new Vector3(Position.X + renderer.cameraPosition.X, Position.Y + renderer.cameraPosition.Y, Position.Z + renderer.cameraPosition.Z), new Vector3(0, 0, 0), Vector3.Up) * renderer.matrix;
+            }
+            else
+            {
+                (renderer.effect as BasicEffect).View = Matrix.CreateLookAt(new Vector3(Position.X, Position.Y, Position.Z), new Vector3(0, 0, 0), Vector3.Up) * renderer.matrix;
+            }
+                cval += .01f;
+            (renderer.effect as BasicEffect).Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, renderer.graphicsDevice.Viewport.AspectRatio, 1, 500);
+
+            renderer.effect.CurrentTechnique.Passes[0].Apply();
+            renderer.graphicsDevice.DrawPrimitives(PrimitiveType.TriangleList, 0, vertices.Length / 3);
+            if (prevstate != null)
+            {
+                renderer.graphicsDevice.DepthStencilState = prevstate;
+            }
+        }
+        Microsoft.Xna.Framework.Graphics.VertexBuffer mbuff;
+        public override Vector3D[] VertexArray
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+    }
+    class WPTouchPad:Touchpad
+    {
+        public WPTouchPad(PhoneRenderer mder)
+        {
+           
+        }
+        
+        public override bool IsConnected
+        {
+            get
+            {
+                return true;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+    }
+    class WPKeyboard : _3DAPI.Keyboard
+    {
+        public WPKeyboard(PhoneRenderer mder)
+        {
+        
+        }
+        public override bool IsConnected
+        {
+            get
+            {
+                return false;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+    }
+    class WPMouse:_3DAPI.Mouse
+    {
+        public WPMouse(PhoneRenderer mder)
+        {
+        
+        }
+        public override bool IsConnected
+        {
+            get
+            {
+                return false;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+    }
+    public class PhoneRenderer:Renderer
+    {
+        public override void Dispose()
+        {
+            //TODO: Dispose here
+        }
+        public Matrix matrix = Matrix.CreateTranslation(0,0,0);
+        public PhoneRenderer(Game game, ContentManager contentman, GraphicsDevice graphics)
+        {
+            graphicsDevice = graphics;
+            manager = contentman;
+            this.game = game;
+            pad = new WPTouchPad(this);
+            mouse = new WPMouse(this);
+            mboard = new WPKeyboard(this);
+        }
+        _3DAPI.Keyboard mboard;
+        _3DAPI.Mouse mouse;
+        internal Microsoft.Xna.Framework.Graphics.Texture2D itext;
+        internal Effect effect;
+        internal ContentManager manager;
+        internal GraphicsDevice graphicsDevice;
+        internal Game game;
+        public void NtfyReadyRender()
+        {
+            Draw();
+
+        }
+       
+        public override _3DAPI.VertexBuffer CreateVertexBuffer(Vector3D[] vertices, Vector2D[] texcoords, Vector3D[] normals)
+        {
+            return new WPVertBuffer(this, vertices, normals, texcoords);
+
+        }
+        //No keyboard or mouse
+        public override _3DAPI.Keyboard defaultKeyboard
+        {
+            get { return mboard; }
+        }
+        public override _3DAPI.Mouse defaultMouse
+        {
+            get { return mouse; }
+        }
+        Touchpad pad;
+        public override Touchpad defaultTouchpad
+        {
+            get { return pad; }
+        }
+        public override _3DAPI.Texture2D createTexture(int Width, int Height)
+        {
+            return new WPTexture(this, Width, Height);
+        }
+        public override _3DAPI.Texture2D createTextureFromBitmap(System.Drawing.Bitmap bitmap)
+        {
+            return new WPTexture(this, bitmap.FilenameForWPTextureResource);
+        }
+        public override Shader createBasicShader()
+        {
+            return new WPShader(this);
+        }
+    }
+}

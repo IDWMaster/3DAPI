@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="GlTestApp\Main.cs">
+    <Files>
+      <File FileName="GlTestApp\Main.cs" Line="265" Column="26" />
+      <File FileName="3DLib_OpenGL\Class1.cs" Line="173" Column="30" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

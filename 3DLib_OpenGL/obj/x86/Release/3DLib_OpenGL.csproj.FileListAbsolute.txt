@@ -1,0 +1,10 @@
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\x86\Release\3DLib_OpenGL.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\x86\Release\3DLib_OpenGL.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\x86\Release\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\x86\Release\DragonOgg.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\x86\Release\OpenTK.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\x86\Release\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\x86\Release\OpenTK.xml
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\x86\Release\3DLib_OpenGL.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\x86\Release\3DLib_OpenGL.pdb

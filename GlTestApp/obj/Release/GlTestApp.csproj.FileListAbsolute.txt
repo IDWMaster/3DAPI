@@ -1,0 +1,16 @@
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\GlTestApp.exe.config
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\basicDXShader.txt
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\GlTestApp.exe
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\3DLib_OpenGL.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\DirectXLib.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\OpenTK.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\SlimDX.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\3DLib_OpenGL.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\DirectXLib.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\OpenTK.xml
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\SlimDX.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Release\SlimDX.xml
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\obj\Release\GlTestApp.exe

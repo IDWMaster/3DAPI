@@ -1,0 +1,10 @@
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\Release\3DLib_OpenGL.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\Release\3DLib_OpenGL.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\Release\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\Release\DragonOgg.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\Release\OpenTK.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\Release\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\Release\OpenTK.xml
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Release\3DLib_OpenGL.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Release\3DLib_OpenGL.pdb

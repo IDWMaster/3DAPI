@@ -1,0 +1,8 @@
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\Projects\GraphicsLib\ModelLoader\bin\Release\ModelLoader.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\Projects\GraphicsLib\ModelLoader\bin\Release\OpenTK.Compatibility.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\Projects\GraphicsLib\ModelLoader\bin\Release\PlatformLib.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\Projects\GraphicsLib\ModelLoader\bin\Release\OpenTK.dll
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\Projects\GraphicsLib\ModelLoader\bin\Release\OpenTK.Compatibility.xml
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\Projects\GraphicsLib\ModelLoader\bin\Release\OpenTK.xml
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\Projects\GraphicsLib\ModelLoader\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\Projects\GraphicsLib\ModelLoader\obj\Release\ModelLoader.dll
