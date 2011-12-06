@@ -3,3 +3,8 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\bin\x86\De
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\x86\Debug\3DAPI.dll
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\x86\Debug\3DAPI.pdb
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\bin\x86\Debug\3DAPI.dll
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\bin\x86\Debug\3DAPI.pdb
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\x86\Debug\3DAPI.csprojResolveAssemblyReference.cache
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\x86\Debug\3DAPI.dll
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\x86\Debug\3DAPI.pdb

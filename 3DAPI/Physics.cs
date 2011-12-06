@@ -41,6 +41,10 @@ namespace _3DAPI
                 Vector3D dd = point - _position;
                 return new Vector3D(Math.Abs(dd.X), Math.Abs(dd.Y), Math.Abs(dd.Z)).Magnitude;
             }
+            /// <summary>
+            /// Whether or not this is a moving object, controlled by the physics engine
+            /// </summary>
+            public bool Moving = true;
             Vector3D[][] interntriangles = null;
             /// <summary>
             /// The object embedded within this object during an inelastic collision
@@ -380,8 +384,10 @@ namespace _3DAPI
                         foreach (PhysicalObject et in physicalobjects)
                         {
                             Vector3D prevpos = et.Position;
-                            
-                            et.Position += et.Velocity;
+                            if (et.Moving)
+                            {
+                                et.Position += et.Velocity;
+                            }
                             foreach (PhysicalObject ett in physicalobjects)
                             {
                                 

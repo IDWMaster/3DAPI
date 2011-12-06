@@ -35,7 +35,13 @@ namespace GlTestApp
             myder.Draw();
             
             Bitmap mmap = new Bitmap("pic.jpg");
+            
             Texture2D mtex = renderer.createTextureFromBitmap(mmap);
+            Bitmap newmap = new Bitmap("pic.jpg");
+            Graphics tfix = Graphics.FromImage(newmap);
+            tfix.DrawString("Hello world!", new Font(FontFamily.GenericMonospace, 16), Brushes.Red, new PointF(0, 0));
+            tfix.Dispose();
+            mtex.UploadBitmap(newmap);
             mtex.Draw();
             rtex = renderer.createTexture(512, 512);
           
@@ -100,12 +106,51 @@ namespace GlTestApp
             
             System.Threading.Thread mthread = new System.Threading.Thread(thetar);
             mthread.Start();
-            renderer.defaultKeyboard.onKeyDown += new keyboardeventargs(defaultKeyboard_onKeyDown);
-            renderer.defaultKeyboard.onKeyUp += new keyboardeventargs(defaultKeyboard_onKeyUp);
+            foreach (Keyboard et in renderer.GetExtensionKeyboards())
+            {
+                et.onKeyDown += new keyboardeventargs(defaultKeyboard_onKeyDown);
+                et.onKeyUp += new keyboardeventargs(defaultKeyboard_onKeyUp);
+            
+            }
             renderer.defaultMouse.onMouseMove += new mouseEvent(defaultMouse_onMouseMove);
             renderer.defaultMouse.onMouseDown += new mouseEvent(defaultMouse_onMouseDown);
+		//Draw a quad
+			List<Vector3D> overts = new List<Vector3D>();
+			List<Vector3D> onorms = new List<Vector3D>();
+			List<Vector2D> ocords = new List<Vector2D>();
+			//Triangle 0
+			
+			overts.Add(new Vector3D(-1,-1,0));
+			overts.Add(new Vector3D(-1,1,0));
+			overts.Add(new Vector3D(1,1,0));
+			ocords.Add(new Vector2D(0,0));
+			ocords.Add(new Vector2D(0,1));
+			ocords.Add(new Vector2D(1,1));
+			//Triangle 1
+			overts.Add(new Vector3D(1,1,0));
+			overts.Add(new Vector3D(1,-1,0));
+			overts.Add(new Vector3D(-1,-1,0));
+			ocords.Add(new Vector2D(1,1));
+			ocords.Add(new Vector2D(1,0));
+			ocords.Add(new Vector2D(0,0));
+			float zfactor = 900;
+			for(int i = 0;i<overts.Count;i++) {
+			//Translate by -1
+				
+				overts[i] = new Vector3D((overts[i].X)*zfactor,(overts[i].Y)*zfactor,overts[i].Z);
+			}
+			for(int i = 0;i<overts.Count;i++) {
+			onorms.Add(new Vector3D(1,1,1));
+			}
+			mbuff = renderer.CreateVertexBuffer(overts.ToArray(),ocords.ToArray(),onorms.ToArray());
+			mbuff.IsStatic = true;
+			mbuff.Position.Z = zfactor;
+			
+			//rtex.Draw();
+			mbuff.Draw();
+		mtex.Draw();
 		}
-
+		static VertexBuffer mbuff;
         static void physicsworld_physicsUpdateFrame()
         {
             
@@ -115,9 +160,11 @@ namespace GlTestApp
         static void defaultMouse_onMouseDown(MouseButton btn, int x, int y)
         {
             lock(physicsworld.physicalobjects) {
-                Mesh tmesh = Primitives.LoadMesh("playercube.obj",flip)[0];
+                Mesh tmesh = Primitives.LoadMesh("test.obj",flip)[0];
                 PhysicalObject mobject = new PhysicalObject(tmesh.meshverts, 1, CollisionType.Dynamic, physicsworld);
                 mobject.IsCube = true;
+                //TODO: Normal computation
+               // tmesh.meshnorms = NormalComputation.ComputeNormals(tmesh.meshverts);
                 mobject.ownedVBO = renderer.CreateVertexBuffer(tmesh.meshverts, tmesh.meshtexas, tmesh.meshnorms);
                 mobject.ownedVBO.Draw();
 
@@ -198,6 +245,7 @@ namespace GlTestApp
             }
             if (!ctrl)
             {
+				
                 if (KeyName.ToLower().Contains("up"))
                 {
 
@@ -251,11 +299,13 @@ namespace GlTestApp
 					
                     cameraPosition.X -= .1f*direction2.X;
 					cameraPosition.Z-=.1f*direction2.Z;
+					mbuff.Position.X-=2.5f*direction2.X;
                 }
                 if (right)
                 {
                     cameraPosition.X += .1f*direction2.X;
                 cameraPosition.Z+=.1f*direction2.Z;
+					mbuff.Position.X +=2.5f*direction2.X;
 				}
                 if (up)
                 {

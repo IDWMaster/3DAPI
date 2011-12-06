@@ -41,6 +41,22 @@ namespace _3DLib_OpenGL
     #endregion
     class GLTexture : Texture2D
     {
+        protected override void uploadbitmap(Bitmap tmap)
+        {
+            GLHelpers.ReplaceTexture(tmap, texid);
+            
+        }
+        //Removed: Reason: Thread safety
+		//public override System.Drawing.Bitmap image {
+		//	get {
+	//			Bitmap mmap = new Bitmap(Width,Height);
+		//		System.Drawing.Imaging.BitmapData mdat = mmap.LockBits(new Rectangle(0,0,Width,Height),System.Drawing.Imaging.ImageLockMode.WriteOnly,System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+				
+	//			GL.GetTexImage(TextureTarget.Texture2D,0,PixelFormat.Bgr,PixelType.UnsignedByte,mdat.Scan0);
+	//		mmap.UnlockBits(mdat);
+	//			return mmap;
+	//		}
+	//	}
         public GLTexture(int width, int height)
             : base(width, height)
         {
@@ -95,7 +111,7 @@ namespace _3DLib_OpenGL
                 depthtest = value;
             }
         }
-        public override void Dispose()
+        protected override void _Dispose()
         {
             throw new NotImplementedException();
         }
@@ -116,13 +132,18 @@ namespace _3DLib_OpenGL
             {
                 displaylist = GL.GenLists(1);
                 GL.NewList(displaylist, ListMode.Compile);
+				if(renderer.PrimMode == PrimitiveMode.TriangleList) {
                 GL.Begin(BeginMode.Triangles);
+				} else {
+				GL.Begin(BeginMode.TriangleStrip);
+				}
+				
                 for (int i = 0; i < verts.Length; i++)
                 {
 
 
 
-                    GL.TexCoord2(texc[i].X, texc[i].Y);
+                    GL.TexCoord2(texc[i].X, texc[i].Y*-1);
                     GL.Normal3(norms[i].X, norms[i].Y, norms[i].Z);
                     GL.Vertex3(verts[i].X, verts[i].Y, verts[i].Z);
                 }
@@ -132,10 +153,14 @@ namespace _3DLib_OpenGL
             if (!sta)
             {
 				if(!renderer.mt) {
-                Matrix4 mat = Matrix4.CreateRotationX(rotation.X) * Matrix4.CreateRotationY(rotation.Y) * Matrix4.CreateRotationZ(rotation.Z) * Matrix4.LookAt(new Vector3(0, 0, 1), new Vector3(0, 0, 0), new Vector3(0, 1, 0)) * Matrix4.CreateTranslation(Position.X - renderer.cameraPosition.X, Position.Y + renderer.cameraPosition.Y, -Position.Z + renderer.cameraPosition.Z)*Matrix4.CreateRotationY(MathHelper.DegreesToRadians(-renderer.worldRotation.Y))*Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(-renderer.worldRotation.Z))*Matrix4.CreateRotationX(MathHelper.DegreesToRadians(-renderer.worldRotation.X)) * Matrix4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(45), (float)renderer.Width / (float)renderer.Height, 1, 5000);
-				GL.LoadMatrix(ref mat);
+                
+                
+                   Matrix4 mat = Matrix4.CreateRotationY(rotation.Y) * Matrix4.CreateRotationZ(rotation.Z) * Matrix4.CreateRotationX(rotation.X) * Matrix4.LookAt(new Vector3(0, 0, 1), new Vector3(0, 0, 0), new Vector3(0, 1, 0)) * Matrix4.CreateTranslation(Position.X - renderer.cameraPosition.X, Position.Y + renderer.cameraPosition.Y, -Position.Z + renderer.cameraPosition.Z) * Matrix4.CreateFromAxisAngle(Vector3.UnitY, MathHelper.DegreesToRadians(-renderer.worldRotation.Y)) * Matrix4.CreateFromAxisAngle(Vector3.UnitZ, MathHelper.DegreesToRadians(-renderer.worldRotation.Z)) * Matrix4.CreateFromAxisAngle(Vector3.UnitX, MathHelper.DegreesToRadians(-renderer.worldRotation.X)) * Matrix4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(45), (float)renderer.Width / (float)renderer.Height, 1, 5000);
+                
+                 GL.LoadMatrix(ref mat);
+                
 				}else {
-				Matrix4 mat = Matrix4.CreateRotationX(rotation.X) * Matrix4.CreateRotationY(rotation.Y) * Matrix4.CreateRotationZ(rotation.Z) * Matrix4.LookAt(new Vector3(0, 0, 1), new Vector3(0, 0, 0), new Vector3(0, 1, 0)) * Matrix4.CreateTranslation(Position.X - renderer.spos.X, Position.Y + renderer.spos.Y, -Position.Z + renderer.spos.Z)*Matrix4.CreateRotationY(MathHelper.DegreesToRadians(-renderer.srot.Y))*Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(-renderer.srot.Z))*Matrix4.CreateRotationX(MathHelper.DegreesToRadians(-renderer.srot.X)) * Matrix4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(45), (float)renderer.Width / (float)renderer.Height, 1, 5000);
+					Matrix4 mat = Matrix4.CreateRotationX(rotation.X) * Matrix4.CreateRotationY(rotation.Y) * Matrix4.CreateRotationZ(rotation.Z) * Matrix4.LookAt(new Vector3(0, 0, 1), new Vector3(0, 0, 0), new Vector3(0, 1, 0)) * Matrix4.CreateTranslation(Position.X - renderer.spos.X, Position.Y + renderer.spos.Y, -Position.Z + renderer.spos.Z)*Matrix4.CreateRotationY(MathHelper.DegreesToRadians(-renderer.srot.Y))*Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(-renderer.srot.Z))*Matrix4.CreateRotationX(MathHelper.DegreesToRadians(-renderer.srot.X)) * Matrix4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(45), (float)renderer.rendertexture.Width / (float)renderer.rendertexture.Height, 1, 5000);
 				GL.LoadMatrix(ref mat);
 				}
 					
@@ -192,7 +217,7 @@ namespace _3DLib_OpenGL
                 depthtest = value;
             }
         }
-        public override void Dispose()
+        protected override void _Dispose()
         {
             throw new NotImplementedException();
         
@@ -206,6 +231,10 @@ namespace _3DLib_OpenGL
             verts = vertices;
             texcoords = _texcoords;
             normals = _normals;
+            for (int i = 0; i < texcoords.Length; i++)
+            {
+                texcoords[i].Y *= -1;
+            }
         }
         Vector3D[] verts;
         Vector2D[] texcoords;
@@ -356,10 +385,17 @@ namespace _3DLib_OpenGL
         {
 
             base.OnLoad(e);
-            programID = GL.CreateProgram();
-            renderclass.programID = programID;
+            try
+            {
+                programID = GL.CreateProgram();
+                renderclass.programID = programID;
+              
+            }
+            catch (Exception)
+            {
+            BasicShader.supportsShaders = false;
+            }
             renderclass.eventcontrol.Set();
-
             GL.Enable(EnableCap.Texture2D);
 
             //GL.Enable(EnableCap.VertexArray);
@@ -405,6 +441,7 @@ namespace _3DLib_OpenGL
            
             if (renderclass.rendertexture != null)
             {
+				
                 if (renderbuffer)
                 {
                     //Bind FBO
@@ -433,7 +470,7 @@ namespace _3DLib_OpenGL
                 GL.Clear(ClearBufferMask.DepthBufferBit | ClearBufferMask.ColorBufferBit);
             
 
-                if (!renderbuffer)
+                if (!renderclass.mt)
                 {
                     renderclass.Width = Width;
                     renderclass.Height = Height;
@@ -448,8 +485,10 @@ namespace _3DLib_OpenGL
                 #endregion
                 //if (FBOsupported)
                // {
+			
                     GL.Viewport(0, 0, renderclass.Width, renderclass.Height);
                // }
+			
                 renderclass.ntfyReady();
             
             if (!renderbuffer)
@@ -513,7 +552,8 @@ namespace _3DLib_OpenGL
         protected override void ApplyShader()
         {
 
-
+            try
+            {
             vertindex = GL.CreateShader(ShaderType.VertexShader);
 
             fragindex = GL.CreateShader(ShaderType.FragmentShader);
@@ -530,8 +570,7 @@ namespace _3DLib_OpenGL
             GL.BindAttribLocation(prog, 0, "in_vertex");
             GL.BindAttribLocation(prog, 1, "in_texcoord");
             GL.BindAttribLocation(prog, 2, "in_normal");
-            try
-            {
+            
                 GL.LinkProgram(prog);
             }
             catch (Exception er)
@@ -540,10 +579,10 @@ namespace _3DLib_OpenGL
 
                 supportsShaders = false;
                 Console.WriteLine("WARNING: This GPU only supports the fixed-function pipeline. Shaders cannot be used");
-                GL.Enable(EnableCap.Lighting);
-                GL.Enable(EnableCap.Light0);
-                GL.Light(LightName.Light0, LightParameter.Diffuse, new Vector4(1f, 1f, 1f, 1f));
-                GL.Light(LightName.Light0, LightParameter.Position, new Vector4(0, -5, 0f, 1));
+                //GL.Enable(EnableCap.Lighting);
+               // GL.Enable(EnableCap.Light0);
+               // GL.Light(LightName.Light0, LightParameter.Diffuse, new Vector4(1f, 1f, 1f, 1f));
+              //  GL.Light(LightName.Light0, LightParameter.Position, new Vector4(0, -1, .5f, 1));
 
                 return;
             }
@@ -631,19 +670,47 @@ namespace _3DLib_OpenGL
         }
         OpenTK.Input.MouseDevice realmouse;
     }
+	class SetRenderTargetOperation:_3DAPI.RenderCommand {
+		public SetRenderTargetOperation(GLRenderer mder, GLTexture ite, Vector3D sp, Vector3D sr) {
+			internrenderer = mder;
+			itexture = ite;
+			spos = sp;
+			srot = sr;
+		}
+		Vector3D spos;
+		Vector3D srot;
+		GLTexture itexture;
+		GLRenderer internrenderer;
+		#region implemented abstract members of _3DAPI.RenderCommand
+		protected override void Render ()
+		{
+			internrenderer.rendertexture = itexture;
+			internrenderer.spos = spos;
+			internrenderer.srot = srot;
+			Remove();
+		}
+		#endregion
+	}
     public class GLRenderer : Renderer
     {
         internal bool mt = false;
        internal GLTexture rendertexture;
        internal Vector3D spos;
        internal Vector3D srot;
+		internal PrimitiveMode PrimMode {
+		get {
+			return _imode;
+			}
+		}
         public override void SetRenderTarget(Texture2D texture, Vector3D cpos, Vector3D crot)
         {
             spos = cpos;
             srot = crot;
             rendertexture = texture as GLTexture;
-            
-        }
+            //TODO: Use a RenderTargetOperation instead of this method
+        //SetRenderTargetOperation mop = new SetRenderTargetOperation(this,texture as GLTexture,cpos,crot);
+			
+		}
         public override Texture2D createTextureFromBitmap(Bitmap bitmap)
         {
             return new GLTexture(bitmap);
@@ -675,6 +742,7 @@ namespace _3DLib_OpenGL
             Draw();
         }
         GLWindow mwind;
+        
         public GLRenderer()
         {
             System.Threading.Thread mthread = new System.Threading.Thread(thetar);

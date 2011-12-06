@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPSampleGameContent", "WPSa
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VBSample", "VBSample\VBSample.vbproj", "{E1CDB107-EA8E-4044-8197-D895425F8329}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTriangle", "SimpleTriangle\SimpleTriangle.csproj", "{C328633E-7FCC-4649-B314-E5A3E523BA66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,7 @@ Global
 		{D1FCAE0A-75DC-4A09-8DF0-D3F7E13EB3BC}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
 		{D1FCAE0A-75DC-4A09-8DF0-D3F7E13EB3BC}.Release|x86.ActiveCfg = Release|Windows Phone
 		{E1CDB107-EA8E-4044-8197-D895425F8329}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E1CDB107-EA8E-4044-8197-D895425F8329}.Debug|Any CPU.Build.0 = Debug|x86
 		{E1CDB107-EA8E-4044-8197-D895425F8329}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{E1CDB107-EA8E-4044-8197-D895425F8329}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{E1CDB107-EA8E-4044-8197-D895425F8329}.Debug|Windows Phone.ActiveCfg = Debug|x86
@@ -156,11 +159,24 @@ Global
 		{E1CDB107-EA8E-4044-8197-D895425F8329}.Release|Windows Phone.ActiveCfg = Release|x86
 		{E1CDB107-EA8E-4044-8197-D895425F8329}.Release|x86.ActiveCfg = Release|x86
 		{E1CDB107-EA8E-4044-8197-D895425F8329}.Release|x86.Build.0 = Release|x86
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Debug|Windows Phone.ActiveCfg = Debug|x86
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Debug|x86.ActiveCfg = Debug|x86
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Debug|x86.Build.0 = Debug|x86
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Release|Any CPU.ActiveCfg = Release|x86
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Release|Mixed Platforms.Build.0 = Release|x86
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Release|Windows Phone.ActiveCfg = Release|x86
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Release|x86.ActiveCfg = Release|x86
+		{C328633E-7FCC-4649-B314-E5A3E523BA66}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = GlTestApp\GlTestApp.csproj
+		StartupItem = SimpleTriangle\SimpleTriangle.csproj
 	EndGlobalSection
 EndGlobal

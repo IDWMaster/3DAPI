@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="GlTestApp\Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="3DAPI\TerrainLoader.cs">
     <Files>
-      <File FileName="GlTestApp\Main.cs" Line="265" Column="26" />
-      <File FileName="3DLib_OpenGL\Class1.cs" Line="173" Column="30" />
+      <File FileName="SimpleTriangle\Program.cs" Line="33" Column="19" />
+      <File FileName="3DAPI\TerrainLoader.cs" Line="34" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.IO;
+using System.Drawing;
 
 namespace _3DAPI
 {
@@ -41,6 +42,12 @@ namespace _3DAPI
         public override string ToString()
         {
             return "X:"+X.ToString()+",Y:"+Y.ToString()+",Z:"+Z.ToString();
+        }
+        public Vector3D CrossProduct(Vector3D b)
+        {
+            return new Vector3D(Y * b.Z - Z * b.Y,Z*b.X-X*b.Z,X*b.Y-Y*b.X);
+
+
         }
         public Vector3D Normalize()
         {
@@ -203,6 +210,38 @@ namespace _3DAPI
             TextureOperation mtion = new TextureOperation(this,TextureOperationType.Render);
             
         }
+        protected abstract void uploadbitmap(Bitmap tmap);
+        internal void ___ubtmp(Bitmap z7jr_)
+        {
+            uploadbitmap(z7jr_);
+            z7jr_.Dispose();
+        }
+        /// <summary>
+        /// Replaces this texture with the specified bitmap, disposing of the bitmap when done.
+        /// </summary>
+        /// <param name="bitmap"></param>
+        public void UploadBitmap(Bitmap bitmap)
+        {
+            UploadBitmapOperation mop = new UploadBitmapOperation(bitmap, this);
+            
+        }
+    }
+    class UploadBitmapOperation : RenderCommand
+    {
+        Bitmap bitmap;
+        Texture2D texptr;
+        public UploadBitmapOperation(Bitmap mmap, Texture2D tptr)
+        {
+            bitmap = mmap;
+            texptr = tptr;
+
+        }
+        
+        protected override void Render()
+        {
+            texptr.___ubtmp(bitmap);
+            Remove();
+        }
     }
     class DrawBufferCommand : RenderCommand
     {
@@ -219,6 +258,21 @@ namespace _3DAPI
     public abstract class IDrawable
     {
         public abstract void Draw();
+    }
+    class DisposeCommand : RenderCommand
+    {
+
+        VertexBuffer tbuff;
+        public DisposeCommand(VertexBuffer mt)
+        {
+            tbuff = mt;
+
+        }
+        protected override void Render()
+        {
+            tbuff.CdLD();
+            Remove();
+        }
     }
     public abstract class VertexBuffer:IDrawable
     {
@@ -245,11 +299,20 @@ namespace _3DAPI
         /// <summary>
         /// Disposes of the VertexBuffer from graphics memory
         /// </summary>
-        public abstract void Dispose();
-
+        protected abstract void _Dispose();
+        internal void CdLD()
+        {
+            _Dispose();
+        }
+        public void Dispose()
+        {
+            rcmd.Remove();
+            DisposeCommand dspcd = new DisposeCommand(this);
+        }
+        DrawBufferCommand rcmd = null;
         public override void Draw()
         {
-            DrawBufferCommand mcmd = new DrawBufferCommand(this);
+            rcmd = new DrawBufferCommand(this);
             
         }
         internal void Render()
@@ -519,8 +582,36 @@ namespace _3DAPI
 		    
 		}
 	}
+	public enum PrimitiveMode {
+	TriangleList, TriangleStrip
+	}
     public abstract class Renderer
     {
+        List<Keyboard> extensionkeyboards = new List<Keyboard>();
+        public void RegisterExtensionKeyboard(Keyboard extension)
+        {
+            extensionkeyboards.Add(extension);
+        }
+        /// <summary>
+        /// Gets an extended keyboard
+        /// </summary>
+        /// <returns></returns>
+        public Keyboard[] GetExtensionKeyboards()
+        {
+            List<Keyboard> keyboards = new List<Keyboard>();
+            try
+            {
+                keyboards.Add(defaultKeyboard);
+            }
+            catch (Exception er)
+            {
+            }
+            foreach (Keyboard et in extensionkeyboards)
+            {
+                keyboards.Add(et);
+            }
+            return keyboards.ToArray();
+        }
         public Vector3D worldRotation = new Vector3D();
         public abstract void Dispose();
         public abstract void SetRenderTarget(Texture2D texture, Vector3D campos, Vector3D camrot);
@@ -570,7 +661,32 @@ namespace _3DAPI
         {
         
         }
+		protected PrimitiveMode _imode;
+		class SetPrimitiveModeOperation:RenderCommand {
+			#region implemented abstract members of _3DAPI.RenderCommand
+			protected override void Render ()
+			{
+				_mder.pmode = val;
+			}
+			PrimitiveMode val;
+			Renderer _mder;
+			public SetPrimitiveModeOperation(Renderer mder, PrimitiveMode mode) {
+			_mder = mder;
+				val = mode;
+			}
+			#endregion
 		
+		}
+		internal PrimitiveMode pmode {
+		get {
+			return _imode;
+			}set {
+			_imode = value;
+			}
+		}
+		public void SetPrimitiveMode(PrimitiveMode mode) {
+		SetPrimitiveModeOperation mop = new SetPrimitiveModeOperation(this,mode);
+		}
 		protected void Draw() {
 		lock(RenderCommand.commandlist) {
 			foreach(RenderCommand et in RenderCommand.commandlist) {

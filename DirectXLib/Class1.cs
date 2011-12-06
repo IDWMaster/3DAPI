@@ -29,34 +29,40 @@ namespace DirectXLib
         {
             while (isactive)
             {
-                
-                SlimDX.DirectInput.MouseState currentstate = umouse.GetCurrentState();
-                if (prevstate == null)
+                try
                 {
-                    prevstate = new SlimDX.DirectInput.MouseState();
-                    prevbtns = new bool[currentstate.GetButtons().Length];
-                }
-                bool[] currentbtns = currentstate.GetButtons();
-                for (int i = 0; i < currentbtns.Length; i++)
-                {
-                    if (prevbtns[i] != currentbtns[i])
+                    SlimDX.DirectInput.MouseState currentstate = umouse.GetCurrentState();
+                    if (prevstate == null)
                     {
-                        if (currentbtns[i])
+                        prevstate = new SlimDX.DirectInput.MouseState();
+                        prevbtns = new bool[currentstate.GetButtons().Length];
+                    }
+                    bool[] currentbtns = currentstate.GetButtons();
+                    for (int i = 0; i < currentbtns.Length; i++)
+                    {
+                        if (prevbtns[i] != currentbtns[i])
                         {
-                            ntfyMouseDown((MouseButton)i, currentstate.X, currentstate.Y);
-                        }
-                        else
-                        {
-                            ntfyMouseUp((MouseButton)i, currentstate.X, currentstate.Y);
+                            if (currentbtns[i])
+                            {
+                                ntfyMouseDown((MouseButton)i, currentstate.X, currentstate.Y);
+                            }
+                            else
+                            {
+                                ntfyMouseUp((MouseButton)i, currentstate.X, currentstate.Y);
+                            }
                         }
                     }
+                    if (prevstate.X != currentstate.X || prevstate.Y != currentstate.Y)
+                    {
+                        ntfyMouseMove(MouseButton.None, System.Windows.Forms.Cursor.Position.X, System.Windows.Forms.Cursor.Position.Y);
+                    }
+                    prevbtns = currentbtns;
+                    System.Threading.Thread.Sleep(1);
                 }
-                if (prevstate.X != currentstate.X || prevstate.Y != currentstate.Y)
+                catch (Exception er)
                 {
-                    ntfyMouseMove(MouseButton.None, System.Windows.Forms.Cursor.Position.X, System.Windows.Forms.Cursor.Position.Y);
+                
                 }
-                prevbtns = currentbtns;
-                System.Threading.Thread.Sleep(1);
             }
         }
     }
@@ -79,28 +85,34 @@ namespace DirectXLib
         {
             while (isactive)
             {
+                try
+                {
+                    SlimDX.DirectInput.KeyboardState currentstate = mboard.GetCurrentState();
+                    if (laststate == null)
+                    {
+                        laststate = new SlimDX.DirectInput.KeyboardState();
+                    }
+                    foreach (SlimDX.DirectInput.Key et in currentstate.PressedKeys)
+                    {
+                        if (!laststate.PressedKeys.Contains(et))
+                        {
+                            ntfyKeyDown(et.ToString());
+                        }
+                    }
+                    foreach (SlimDX.DirectInput.Key et in currentstate.ReleasedKeys)
+                    {
+                        if (!laststate.ReleasedKeys.Contains(et))
+                        {
+                            ntfyKeyUp(et.ToString());
+                        }
+                    }
+                    laststate = currentstate;
+                    System.Threading.Thread.Sleep(1);
+                }
+                catch (Exception er)
+                {
                 
-                SlimDX.DirectInput.KeyboardState currentstate = mboard.GetCurrentState();
-                if (laststate == null)
-                {
-                    laststate = new SlimDX.DirectInput.KeyboardState();
                 }
-                foreach (SlimDX.DirectInput.Key et in currentstate.PressedKeys)
-                {
-                    if (!laststate.PressedKeys.Contains(et))
-                    {
-                        ntfyKeyDown(et.ToString());
-                    }
-                }
-                foreach (SlimDX.DirectInput.Key et in currentstate.ReleasedKeys)
-                {
-                    if (!laststate.ReleasedKeys.Contains(et))
-                    {
-                        ntfyKeyUp(et.ToString());
-                    }
-                }
-                laststate = currentstate;
-                System.Threading.Thread.Sleep(1);
             }
         }
     }
@@ -127,6 +139,16 @@ namespace DirectXLib
     }
     class DXTexture : Texture2D
     {
+
+        protected override void uploadbitmap(Bitmap tmap)
+        {
+            IntPtr hDC = internsure.GetSurfaceLevel(0).GetDC();
+            Graphics mfix = Graphics.FromHdc(hDC);
+            mfix.DrawImage(tmap, new Rectangle(0, 0, Width, Height));
+            mfix.Dispose();
+            //TODO: Is this necessary?
+            internsure.GetSurfaceLevel(0).ReleaseDC(hDC);
+        }
         public DXTexture(DirectEngine ngine, int width, int height):base(width,height)
         {
             engine = ngine;
@@ -234,9 +256,9 @@ namespace DirectXLib
             }
         }
         bool hasloaded = false;
-        public override void Dispose()
+        protected override void _Dispose()
         {
-            throw new NotImplementedException();
+            internbuffer.Dispose();
         }
         protected override void RenderBuffer()
         {
@@ -272,7 +294,7 @@ namespace DirectXLib
            
             engine.effect.Technique = engine.effect.GetTechnique("technique0");
             EffectHandle lightdirection = engine.effect.GetParameter(null, "LightDirection");
-            engine.effect.SetValue<Vector3>(lightdirection, new Vector3(0, -5, 100));
+            engine.effect.SetValue<Vector3>(lightdirection, new Vector3(0, 1.4f, -2f));
             EffectHandle texhandle = engine.effect.GetParameter(null, "shaderTexture");
             engine.effect.SetTexture(texhandle, engine.texture);
            
@@ -320,8 +342,14 @@ namespace DirectXLib
             }
             engine.effect.Begin();
             engine.effect.BeginPass(0);
-            
-            engine.graphicsDevice.DrawPrimitives(PrimitiveType.TriangleList, 0, verts.Length / 3);
+            if (engine.PMode == PrimitiveMode.TriangleList)
+            {
+                engine.graphicsDevice.DrawPrimitives(PrimitiveType.TriangleList, 0, verts.Length / 3);
+            }
+            else
+            {
+                engine.graphicsDevice.DrawPrimitives(PrimitiveType.TriangleStrip, 0, verts.Length);
+            }
             engine.effect.EndPass();
             engine.effect.End();
             if (!depthtest)
@@ -420,6 +448,13 @@ namespace DirectXLib
     }
     public class DirectEngine:Renderer
     {
+        internal PrimitiveMode PMode
+        {
+            get
+            {
+                return _imode;
+            }
+        }
         public override void SetRenderTarget(Texture2D texture, Vector3D campos, Vector3D camrot)
         {
             

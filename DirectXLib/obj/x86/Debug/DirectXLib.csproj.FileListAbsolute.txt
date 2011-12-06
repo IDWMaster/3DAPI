@@ -6,3 +6,14 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\x
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\x86\Debug\DirectXLib.dll
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\x86\Debug\DirectXLib.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Debug\basicDXShader.txt
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Debug\basicDXShader.txt
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Debug\DirectXLib.dll
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Debug\DirectXLib.pdb
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Debug\3DAPI.dll
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Debug\SlimDX.dll
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Debug\3DAPI.pdb
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Debug\SlimDX.pdb
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\x86\Debug\SlimDX.xml
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\x86\Debug\DirectXLib.csprojResolveAssemblyReference.cache
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\x86\Debug\DirectXLib.dll
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\x86\Debug\DirectXLib.pdb

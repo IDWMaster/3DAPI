@@ -7,7 +7,6 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPS
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\bin\Windows Phone\Debug\WPPhoneCore.dll
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\bin\Windows Phone\Debug\WPhoneLib.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\bin\Windows Phone\Debug\WPPhoneCore.pdb
-C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\obj\Windows Phone\Debug\WPSampleGame.dll
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\obj\Windows Phone\Debug\WPSampleGame.pdb
@@ -21,6 +20,7 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPS
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\bin\Windows Phone\Debug\playercube.mtl
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\bin\Windows Phone\Debug\playercube.obj
 bin\Windows Phone\Debug\
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\bin\Windows Phone\Debug\WPSampleGame.xap
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\obj\Windows Phone\Debug\XapCacheFile.xml
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\bin\Windows Phone\Debug\AppManifest.xaml
