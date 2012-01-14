@@ -102,13 +102,23 @@ public class ObjMeshLoader
             line = line.Replace("  ", " ");
 
             string[] parameters = line.Split(splitCharacters);
-			if(parameters[0] == "newmtl") {
-			if(materials.ContainsKey(parameters[1])) {
-				isfound = true;
-				} else {
-				current = parameters[1];
-				}
-			}
+            try
+            {
+                if (parameters[0] == "newmtl")
+                {
+                    if (materials.ContainsKey(parameters[1]))
+                    {
+                        isfound = true;
+                    }
+                    else
+                    {
+                        current = parameters[1];
+                    }
+                }
+            }
+            catch (Exception er)
+            {
+            }
 			if(parameters[0] == "map_Kd") {
 			if(!isfound) {
 					string filename = "";

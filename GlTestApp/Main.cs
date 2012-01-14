@@ -31,7 +31,7 @@ namespace GlTestApp
       
            //Uncomment for AABB collisions
            
-            // physicsworld.testtype = CollisionTestType.AABB;
+             //physicsworld.testtype = CollisionTestType.AABB;
             myder.Draw();
             
             Bitmap mmap = new Bitmap("pic.jpg");

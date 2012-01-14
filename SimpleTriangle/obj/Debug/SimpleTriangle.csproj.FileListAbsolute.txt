@@ -16,7 +16,6 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\b
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\obj\Debug\SimpleTriangle.exe
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\obj\Debug\SimpleTriangle.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\bin\Debug\SimpleTriangle.exe.config
-C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\obj\Debug\ResolveAssemblyReference.cache
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\bin\Debug\basicDXShader.txt
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\bin\Debug\pic.jpg
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\bin\Debug\SimpleTriangle.exe.config
@@ -37,3 +36,4 @@ D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\o
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\obj\Debug\SimpleTriangle.exe
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\obj\Debug\SimpleTriangle.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\bin\Debug\Terrain2.bmp
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\obj\Debug\SimpleTriangle.csprojResolveAssemblyReference.cache

@@ -7,9 +7,9 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\bin\Debug\
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\bin\Debug\3DAPI.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.dll
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.pdb
-C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\ResolveAssemblyReference.cache
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\bin\Debug\3DAPI.dll
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\bin\Debug\3DAPI.pdb
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.csprojResolveAssemblyReference.cache
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.dll
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.csprojResolveAssemblyReference.cache

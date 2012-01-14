@@ -5,7 +5,6 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x8
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Debug\OpenTK.dll
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Debug\3DLib_OpenGL.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Debug\3DAPI.pdb
-C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\obj\x86\Debug\GlTestApp.exe
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\obj\x86\Debug\GlTestApp.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Debug\OpenTK.xml
@@ -45,3 +44,4 @@ D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x8
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Debug\SlimDX.pdb
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\x86\Debug\SlimDX.xml
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\obj\x86\Debug\GlTestApp.csprojResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\obj\x86\Debug\GlTestApp.csprojResolveAssemblyReference.cache

@@ -180,18 +180,19 @@ namespace _3DAPI
             /// Indicates whether or not this object is a cube. Set to TRUE to optimize collisions with this object using AABB
             /// </summary>
             public bool IsCube = false;
-            bool testCollisionTriangle(Vector3D[] verti, Vector3D coord)
-            {
-                
-                Vector3D max = new Vector3D(-999999999, -999999999, -999999999);
-                Vector3D min = new Vector3D(999999999, 999999999, 999999999);
 
-                foreach (Vector3D et in verti)
+
+            bool testCollisionTriangle(ObjVertex[] verti, Vector3D coord)
+            {
+                Vector3D max = new Vector3D(-5000, -5000, -5000);
+                Vector3D min = new Vector3D(5000, 5000, 5000);
+
+                foreach (ObjVertex et in verti)
                 {
                     ObjVertex e = new ObjVertex();
-                    e.Vertex.X = et.X * -1;
-                    e.Vertex.Y = et.Y * -1;
-                    e.Vertex.Z = et.Z * -1;
+                    e.Vertex.X = et.Vertex.X * -1;
+                    e.Vertex.Y = et.Vertex.Y * -1;
+                    e.Vertex.Z = et.Vertex.Z * -1;
                     if (e.Vertex.X < min.X)
                     {
                         min.X = e.Vertex.X;
@@ -235,6 +236,8 @@ namespace _3DAPI
 
                     return false;
                 }
+
+
             }
            
             public bool Contains(PhysicalObject pobject)
@@ -287,7 +290,14 @@ namespace _3DAPI
                 }
                 foreach (Vector3D[] et in interntriangles)
                 {
-                    if (testCollisionTriangle(et, point))
+                    List<ObjVertex> vt = new List<ObjVertex>();
+                    foreach (Vector3D ty in et)
+                    {
+                        ObjVertex mm = new ObjVertex();
+                        mm.Vertex = ty;
+                        vt.Add(mm);
+                    }
+                    if (testCollisionTriangle(vt.ToArray(), point))
                     {
                         
                         return true;

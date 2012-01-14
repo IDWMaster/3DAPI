@@ -6,4 +6,4 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPhoneLib\bin\Wi
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPhoneLib\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPhoneLib\obj\Windows Phone\Debug\WPhoneLib.dll
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPhoneLib\obj\Windows Phone\Debug\WPhoneLib.pdb
-C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPhoneLib\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPhoneLib\obj\Windows Phone\Debug\WPhoneLib.csprojResolveAssemblyReference.cache

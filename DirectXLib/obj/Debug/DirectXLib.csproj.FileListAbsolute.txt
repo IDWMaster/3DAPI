@@ -8,7 +8,6 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\D
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\Debug\DirectXLib.dll
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\Debug\DirectXLib.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\Debug\basicDXShader.txt
-C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\Debug\ResolveAssemblyReference.cache
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\Debug\basicDXShader.txt
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\Debug\DirectXLib.dll
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\Debug\DirectXLib.pdb
@@ -20,3 +19,4 @@ D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\bin\D
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\Debug\DirectXLib.csprojResolveAssemblyReference.cache
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\Debug\DirectXLib.dll
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\Debug\DirectXLib.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\DirectXLib\obj\Debug\DirectXLib.csprojResolveAssemblyReference.cache

@@ -222,7 +222,7 @@ namespace _3DAPI
         /// <param name="bitmap"></param>
         public void UploadBitmap(Bitmap bitmap)
         {
-            UploadBitmapOperation mop = new UploadBitmapOperation(bitmap, this);
+            UploadBitmapOperation mop = new UploadBitmapOperation(bitmap.Clone() as Bitmap, this);
             
         }
     }
@@ -587,6 +587,7 @@ namespace _3DAPI
 	}
     public abstract class Renderer
     {
+        public bool LightingEnabled = false;
         List<Keyboard> extensionkeyboards = new List<Keyboard>();
         public void RegisterExtensionKeyboard(Keyboard extension)
         {

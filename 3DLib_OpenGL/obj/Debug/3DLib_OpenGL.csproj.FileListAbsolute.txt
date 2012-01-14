@@ -7,7 +7,6 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.dll
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\Debug\OpenTK.xml
-C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Debug\ResolveAssemblyReference.cache
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\Debug\3DLib_OpenGL.dll
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\Debug\3DLib_OpenGL.pdb
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin\Debug\3DAPI.dll
@@ -18,3 +17,4 @@ D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\bin
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.csprojResolveAssemblyReference.cache
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.dll
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.csprojResolveAssemblyReference.cache

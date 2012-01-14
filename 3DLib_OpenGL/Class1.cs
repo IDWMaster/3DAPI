@@ -219,7 +219,7 @@ namespace _3DLib_OpenGL
         }
         protected override void _Dispose()
         {
-            throw new NotImplementedException();
+            GL.DeleteBuffers(bufferIDs.Length, bufferIDs);
         
         }
         internal bool mt = false;
@@ -487,6 +487,7 @@ namespace _3DLib_OpenGL
                // {
 			
                     GL.Viewport(0, 0, renderclass.Width, renderclass.Height);
+                    
                // }
 			
                 renderclass.ntfyReady();
@@ -554,6 +555,10 @@ namespace _3DLib_OpenGL
 
             try
             {
+                GL.Enable(EnableCap.Blend);
+                GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
+                GL.Enable(EnableCap.AlphaTest);
+			
             vertindex = GL.CreateShader(ShaderType.VertexShader);
 
             fragindex = GL.CreateShader(ShaderType.FragmentShader);
@@ -629,14 +634,17 @@ namespace _3DLib_OpenGL
             mbuilder.AppendLine("gl_Position = vec4(in_vertex.x,in_vertex.y,in_vertex.z,1.0)*mvp;");
             mbuilder.AppendLine("texture_coordinate = in_texcoord;");
             mbuilder.AppendLine("normal = in_normal;");
-            mbuilder.AppendLine("lightdirection = normalize(vec3(0,-5,100));");
+            mbuilder.AppendLine("lightdirection = normalize(vec3(0,-5,-5));");
             
             mbuilder.AppendLine("}");
             vertsrc = mbuilder.ToString();
             mbuilder = new StringBuilder();
             mbuilder.AppendLine("varying vec3 normal;");
             mbuilder.AppendLine("varying vec3 lightdirection;");
-            mbuilder.AppendLine("varying vec2 texture_coordinate;\nuniform sampler2D my_color_texture;\nvoid main() {\ngl_FragColor = texture2D(my_color_texture,texture_coordinate)*clamp(dot(lightdirection,normal),0.0,1.0); \n}");
+            //TODO: Uncomment to enable lighting
+            //mbuilder.AppendLine("varying vec2 texture_coordinate;\nuniform sampler2D my_color_texture;\nvoid main() {\ngl_FragColor = texture2D(my_color_texture,texture_coordinate)*clamp(dot(lightdirection,normal),0.0,1.0); \n}");
+            mbuilder.AppendLine("varying vec2 texture_coordinate;\nuniform sampler2D my_color_texture;\nvoid main() {\ngl_FragColor = texture2D(my_color_texture,texture_coordinate);//*clamp(dot(lightdirection,normal),0.0,1.0); \n}");
+            
             fragsrc = mbuilder.ToString();
             prog = program;
 

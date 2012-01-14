@@ -294,6 +294,8 @@ namespace DirectXLib
            
             engine.effect.Technique = engine.effect.GetTechnique("technique0");
             EffectHandle lightdirection = engine.effect.GetParameter(null, "LightDirection");
+            EffectHandle lightenabled = engine.effect.GetParameter(null, "LightEnabled");
+            engine.effect.SetValue<bool>(lightenabled, engine.LightingEnabled);
             engine.effect.SetValue<Vector3>(lightdirection, new Vector3(0, 1.4f, -2f));
             EffectHandle texhandle = engine.effect.GetParameter(null, "shaderTexture");
             engine.effect.SetTexture(texhandle, engine.texture);

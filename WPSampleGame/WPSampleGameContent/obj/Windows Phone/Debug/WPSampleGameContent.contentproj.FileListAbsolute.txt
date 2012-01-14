@@ -1,1 +1,1 @@
-C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGameContent\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGameContent\obj\Windows Phone\Debug\WPSampleGameContent.contentprojResolveAssemblyReference.cache

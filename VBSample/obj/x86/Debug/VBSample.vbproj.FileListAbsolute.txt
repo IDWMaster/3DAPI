@@ -19,9 +19,6 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Deb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\test.mtl
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\test.obj
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\untitled.mtl
-C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\GenerateResource.write.1.tlog
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\basicDXShader.txt
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\pic.jpg
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\mirror.mtl
@@ -56,3 +53,5 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Deb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.xml
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\VBSample.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.pdb
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.vbprojResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.vbproj.GenerateResource.Cache
