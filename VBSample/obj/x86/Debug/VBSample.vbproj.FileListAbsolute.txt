@@ -31,7 +31,6 @@ D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Deb
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\VBSample.exe.config
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\VBSample.exe
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\VBSample.pdb
-D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\VBSample.xml
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\3DAPI.dll
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\3DLib_OpenGL.dll
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\DirectXLib.dll
@@ -47,7 +46,6 @@ D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.Resources.resources
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.vbproj.GenerateResource.Cache
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.exe
-D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.xml
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\VBSample.xml
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.xml
@@ -55,3 +53,5 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Deb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.vbprojResolveAssemblyReference.cache
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.vbproj.GenerateResource.Cache
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\bin\Debug\VBSample.xml
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\VBSample\obj\x86\Debug\VBSample.xml

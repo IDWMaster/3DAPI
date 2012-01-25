@@ -6,6 +6,7 @@ namespace _3DAPI
 {
     public sealed class BoundingBox
     {
+        public static bool OptimizationEnabled = true;
         //TODO
         public Vector3D minX = new Vector3D(99999999999999, 99999999999999, 99999999999999);
 
@@ -28,10 +29,14 @@ namespace _3DAPI
         /// <returns></returns>
         public bool PointWithin(Vector3D _point)
         {
+            if (!OptimizationEnabled)
+            {
+                return true;
+            }
             
            // Vector3D training = new Vector3D(0, 0, 10.9f);
             Vector3D point = _point;// + training;
-            if (point.X > minX.X & point.Y > minY.Y & point.Z > minZ.Z & point.X < maxX.X & point.Y < maxY.Y & point.Z < maxX.Z)
+            if (point.X >= minX.X && point.Y >= minY.Y && point.Z >= minZ.Z && point.X <= maxX.X && point.Y <= maxY.Y && point.Z <= maxZ.Z)
             {
                 return true;
             }

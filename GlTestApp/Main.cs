@@ -160,7 +160,7 @@ namespace GlTestApp
         static void defaultMouse_onMouseDown(MouseButton btn, int x, int y)
         {
             lock(physicsworld.physicalobjects) {
-                Mesh tmesh = Primitives.LoadMesh("test.obj",flip)[0];
+                Mesh tmesh = Primitives.LoadMesh("playercube.obj",flip)[0];
                 PhysicalObject mobject = new PhysicalObject(tmesh.meshverts, 1, CollisionType.Dynamic, physicsworld);
                 mobject.IsCube = true;
                 //TODO: Normal computation

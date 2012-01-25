@@ -190,9 +190,9 @@ namespace _3DAPI
                 foreach (ObjVertex et in verti)
                 {
                     ObjVertex e = new ObjVertex();
-                    e.Vertex.X = et.Vertex.X * -1;
-                    e.Vertex.Y = et.Vertex.Y * -1;
-                    e.Vertex.Z = et.Vertex.Z * -1;
+                    e.Vertex.X = et.Vertex.X;// * -1;
+                    e.Vertex.Y = et.Vertex.Y;// * -1;
+                    e.Vertex.Z = et.Vertex.Z;// * -1;
                     if (e.Vertex.X < min.X)
                     {
                         min.X = e.Vertex.X;

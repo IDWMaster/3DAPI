@@ -64,6 +64,7 @@ public class ObjMeshLoader
     }
 	public static bool Load2(ObjMesh mesh, StreamReader streamReader, ObjMesh prevmesh)
     {
+        
 		if(prevmesh !=null) {
 		//mesh.Vertices = prevmesh.Vertices;
 			
@@ -187,8 +188,8 @@ public class ObjMeshLoader
 					//Material specification
 					try {
 					mesh.Material = materials[parameters[1]];
-					}catch(KeyNotFoundException) {
-					Console.WriteLine("WARNING: Texture parse failure: "+parameters[1]);
+					}catch(Exception) {
+					Console.WriteLine("WARNING: Texture parse failure: ");
 					}
 					break;
                 case "p": // Point
@@ -200,7 +201,7 @@ public class ObjMeshLoader
                     float z = float.Parse(parameters[3]);
                     vertices.Add(new Vector3D(x, y, z));
                     break;
-
+                    
                 case "vt": // TexCoord
                     float u = float.Parse(parameters[1]);
                     float v = float.Parse(parameters[2]);

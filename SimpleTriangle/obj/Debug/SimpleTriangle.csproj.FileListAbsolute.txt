@@ -37,3 +37,4 @@ D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\o
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\obj\Debug\SimpleTriangle.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\bin\Debug\Terrain2.bmp
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\obj\Debug\SimpleTriangle.csprojResolveAssemblyReference.cache
+D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\SimpleTriangle\bin\Debug\Terrain2.bmp

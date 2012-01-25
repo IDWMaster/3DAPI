@@ -21,3 +21,9 @@ C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPS
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\bin\Windows Phone\Debug\playercube.obj
 bin\Windows Phone\Debug\
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\obj\Windows Phone\Debug\WPSampleGame.csprojResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\bin\Windows Phone\Debug\WPSampleGame.xap
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\obj\Windows Phone\Debug\XapCacheFile.xml
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\bin\Windows Phone\Debug\AppManifest.xaml
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\obj\Windows Phone\Debug\WMAppManifest.xml.g
+C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\WPSampleGame\WPSampleGame\obj\Windows Phone\Debug\WMAppManifest.xml
+bin\Windows Phone\Debug\

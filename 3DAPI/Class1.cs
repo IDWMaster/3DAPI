@@ -366,6 +366,7 @@ namespace _3DAPI
         public Vector3D[] meshverts;
         public Vector3D[] meshnorms;
         public Vector2D[] meshtexas;
+        public string name;
         public System.Drawing.Bitmap bitmap;
     }
 	public class Primitives {
@@ -381,7 +382,8 @@ namespace _3DAPI
                 List<Vector3D> meshnorms = new List<Vector3D>();
                 List<Vector2D> meshtex = new List<Vector2D>();
                 ObjMesh currentmesh = new ObjMesh();
-             
+                string name = et.ReadLine();
+                Console.WriteLine("Loading " + name);
                 bool success = ObjMeshLoader.Load2(currentmesh, et, prevmesh);
                 foreach (ObjTriangle ett in currentmesh.Triangles)
                 {
@@ -409,6 +411,7 @@ namespace _3DAPI
                     }
                 }
                 Mesh realmesh = new Mesh();
+                realmesh.name = name;
                 realmesh.meshverts = meshverts.ToArray();
                 realmesh.meshnorms = meshnorms.ToArray();
                 realmesh.meshtexas = meshtex.ToArray();

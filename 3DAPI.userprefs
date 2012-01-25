@@ -3,7 +3,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="3DAPI\TerrainLoader.cs">
     <Files>
       <File FileName="SimpleTriangle\Program.cs" Line="33" Column="19" />
-      <File FileName="3DAPI\TerrainLoader.cs" Line="34" Column="6" />
+      <File FileName="3DAPI\TerrainLoader.cs" Line="6" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
