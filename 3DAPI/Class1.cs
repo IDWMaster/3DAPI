@@ -369,7 +369,16 @@ namespace _3DAPI
         public string name;
         public System.Drawing.Bitmap bitmap;
     }
+    /// <summary>
+    /// Contains commands to load and manipulate 3D meshes
+    /// </summary>
 	public class Primitives {
+        /// <summary>
+        /// Loads a 3D mesh from an obj file
+        /// </summary>
+        /// <param name="filename">The file name</param>
+        /// <param name="fliptexcoords">Whether or not texture coordinates should be flipped when loading the mesh</param>
+        /// <returns></returns>
         public static Mesh[] LoadMesh(string filename, bool fliptexcoords)
         {
             ObjMeshLoader.Clear();

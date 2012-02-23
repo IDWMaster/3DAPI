@@ -142,12 +142,18 @@ namespace DirectXLib
 
         protected override void uploadbitmap(Bitmap tmap)
         {
-            IntPtr hDC = internsure.GetSurfaceLevel(0).GetDC();
-            Graphics mfix = Graphics.FromHdc(hDC);
-            mfix.DrawImage(tmap, new Rectangle(0, 0, Width, Height));
-            mfix.Dispose();
-            //TODO: Is this necessary?
-            internsure.GetSurfaceLevel(0).ReleaseDC(hDC);
+            tmap.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            for (int i = 0; i < internsure.LevelCount; i++)
+            {
+                IntPtr hDC = internsure.GetSurfaceLevel(i).GetDC();
+                Graphics mfix = Graphics.FromHdc(hDC);
+                
+                //Mip-mapping means much in little (multum in parvo) -- Source - Wikipedia
+                mfix.DrawImage(tmap, new Rectangle(0, 0, internsure.GetLevelDescription(i).Width, internsure.GetLevelDescription(i).Height),new Rectangle(0,0,tmap.Width,tmap.Height),GraphicsUnit.Pixel);
+                
+                mfix.Dispose();
+                internsure.GetSurfaceLevel(i).ReleaseDC(hDC);
+            }
         }
         public DXTexture(DirectEngine ngine, int width, int height):base(width,height)
         {
