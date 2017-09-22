@@ -13,3 +13,8 @@ D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.dll
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DAPI\obj\Debug\3DAPI.csprojResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DAPI\bin\Debug\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DAPI\bin\Debug\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DAPI\obj\Debug\3DAPI.csproj.CoreCompileInputs.cache
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DAPI\obj\Debug\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DAPI\obj\Debug\3DAPI.pdb

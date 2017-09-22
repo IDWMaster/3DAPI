@@ -18,3 +18,14 @@ D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.dll
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.pdb
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.csprojResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DLib_OpenGL\bin\Debug\3DLib_OpenGL.dll
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DLib_OpenGL\bin\Debug\3DLib_OpenGL.pdb
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DLib_OpenGL\bin\Debug\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DLib_OpenGL\bin\Debug\DragonOgg.dll
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DLib_OpenGL\bin\Debug\OpenTK.dll
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DLib_OpenGL\bin\Debug\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DLib_OpenGL\bin\Debug\OpenTK.xml
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.csprojResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.csproj.CoreCompileInputs.cache
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.dll
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\3DLib_OpenGL\obj\Debug\3DLib_OpenGL.pdb

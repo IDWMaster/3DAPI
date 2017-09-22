@@ -48,3 +48,27 @@ D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\De
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\bin\Debug\SlimDX.xml
 D:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\obj\Debug\GlTestApp.csprojResolveAssemblyReference.cache
 C:\Users\Brian Bosak\Desktop\SCHOOL computer\3DAPI\dapirenderer\GlTestApp\obj\Debug\GlTestApp.csprojResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\basicDXShader.txt
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\mirror.mtl
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\mirror.obj
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\playercube.mtl
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\playercube.obj
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\test.mtl
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\untitled.mtl
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\test.obj
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\GlTestApp.exe.config
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\GlTestApp.exe
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\GlTestApp.pdb
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\3DAPI.dll
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\3DLib_OpenGL.dll
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\DirectXLib.dll
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\OpenTK.dll
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\SlimDX.dll
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\3DLib_OpenGL.pdb
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\3DAPI.pdb
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\DirectXLib.pdb
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\bin\Debug\OpenTK.xml
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\obj\Debug\GlTestApp.csprojResolveAssemblyReference.cache
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\obj\Debug\GlTestApp.csproj.CoreCompileInputs.cache
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\obj\Debug\GlTestApp.exe
+C:\Users\Brian Bosak\Desktop\webad\3DAPI\GlTestApp\obj\Debug\GlTestApp.pdb
